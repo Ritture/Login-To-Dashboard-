@@ -94,7 +94,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:text="Login In"
-            android:onClick="@{() -> sp_view.onLoginClick()}"
+            android:onClick="@{(view) -> sp_view.onLoginClick()}"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -108,7 +108,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:text="Sign Up"
-            android:onClick="@{() -> sp_view.onSignUpClick()}"
+            android:onClick="@{(view) -> sp_view.onSignUpClick()}"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
