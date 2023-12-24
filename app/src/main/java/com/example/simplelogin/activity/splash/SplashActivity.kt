@@ -1,7 +1,10 @@
 package com.example.simplelogin.activity.splash
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.simplelogin.activity.MainViewModelFactory
 import com.example.simplelogin.activity.utility.AppPrefrence
@@ -25,7 +28,13 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun allowPermission() {
-       // if(ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)!=PackageManager.PERMISSION_GRANTED)
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.INTERNET
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            listPermissionNeeded.add(Manifest.permission.INTERNET)
+        }
     }
 
 }
