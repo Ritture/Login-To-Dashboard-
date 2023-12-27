@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.simplelogin.activity.base.BaseViewModel
+import com.example.simplelogin.activity.login.LoginViewModel
 import com.example.simplelogin.activity.splash.SplashViewModel
 
 @Suppress("UNCHECKED_CAST")
@@ -14,7 +15,10 @@ class MainViewModelFactory(private var application: Application) : ViewModelProv
             SplashViewModel(application) as T
         } else if (modelClass.isAssignableFrom(BaseViewModel::class.java)) {
             BaseViewModel(application) as T
-        } else {
+        }else if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
+            LoginViewModel(application) as T
+        }
+        else {
             throw IllegalArgumentException("Unknown View Model Class")
         }
     }

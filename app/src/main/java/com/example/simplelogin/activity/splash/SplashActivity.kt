@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import com.example.simplelogin.R.color.white
 import com.example.simplelogin.activity.factory.MainViewModelFactory
 import com.example.simplelogin.databinding.ActivitySplashBinding
 
@@ -27,6 +28,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
         viewModel =
             ViewModelProvider(this, MainViewModelFactory(application))[SplashViewModel::class.java]
+        window.statusBarColor = ContextCompat.getColor(this, white)
         binding.spView = viewModel
         allowPermission()
     }
